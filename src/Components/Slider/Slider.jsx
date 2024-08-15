@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import GlobalApi from "../../../Services/GlobalApi";
+import GlobalApi from "../../Services/GlobalApi";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const screenWidth = window.innerWidth;
@@ -25,7 +25,7 @@ const Slider = () => {
     <div>
       <HiChevronLeft className="text-white text-[35px] absolute mx-5 mt-[150px] cursor-pointer hidden md:block" onClick={()=> sliderLeft(elementRef.current)} />
       <HiChevronRight className="text-white text-[35px] absolute mx-5 mt-[150px] right-0 cursor-pointer hidden md:block" onClick={()=> sliderRight(elementRef.current)} />
-      <div className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth" ref={elementRef}>
+      <div className="flex overflow-x-auto w-full px-5 md:px-16 py-4 scrollbar-hide scroll-smooth" ref={elementRef}>
         {movieList.map((movie) => (
           <img
             key={movie.id}
